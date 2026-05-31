@@ -63,7 +63,7 @@ char* GetLine(void)
         length++;
     }
 
-    if (ch == EOF && length == 0) {
+    if (length == 0) {
         free(line);
         return NULL;
     }
