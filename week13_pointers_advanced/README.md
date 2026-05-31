@@ -6,13 +6,14 @@
 
 ## 문제 목록
 
-### problem_01_dynamic_array_input - 동적 배열 입력과 처리
+### problem_01_find_max_position - 최대값 요소의 주소 찾기
 
-- 파일: `problem_01_dynamic_array_input.c`
+- 파일: `problem_01_find_max_position.c`
 - 요구사항:
-  - 필요한 크기만큼 동적으로 메모리를 할당한다.
-  - 입력된 데이터를 배열처럼 처리한다.
-  - 사용한 메모리를 해제한다.
+  - 임의 길이의 정수 배열을 함수에 전달한다.
+  - 배열에서 최대값을 갖는 요소를 찾는다.
+  - 최대값 요소의 주소를 이중 포인터 매개변수로 호출자에게 전달한다.
+  - 호출자는 전달받은 주소를 통해 배열 안의 최대값을 변경할 수 있다.
 
 ### problem_02_dynamic_array_processing - 동적 배열 처리
 
@@ -41,7 +42,7 @@
 ## 실행 방법
 
 ```bash
-gcc problem_01_dynamic_array_input.c -o problem_01_dynamic_array_input
-./problem_01_dynamic_array_input
+gcc problem_01_find_max_position.c -o problem_01_find_max_position
+./problem_01_find_max_position
 ```
 
