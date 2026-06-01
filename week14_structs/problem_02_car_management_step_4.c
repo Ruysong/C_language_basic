@@ -1,19 +1,15 @@
-#define _CRT_SECURE_NO_WARNINGS
+﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-
 /*
-Problem 2: Car information management
+Problem 2 - Step 4
 
 Design:
-- Car stores a model name, manufacturing year, and total mileage.
-- InputCarInfo fills one Car structure and returns its address.
-- ShowCarInfo prints one Car structure.
-- addMileage increases the mileage of one Car by a user-provided value.
-- isOlderThanYear checks whether a Car is older than a given number of years.
-- InputCarsInfo and ShowCarsInfo manage an array of up to five cars.
+- Manage up to five Car structures in one array.
+- InputCarsInfo fills the array with user-provided car information.
+- ShowCarsInfo prints every car in the array.
+- The unit functions from the previous steps are reused for each car.
 */
-
 typedef struct {
     char model[100];
     int year;
@@ -60,10 +56,6 @@ int main(void)
 
 Car* InputCarInfo(Car* car)
 {
-    if (car == NULL) {
-        return NULL;
-    }
-
     printf("Model: ");
     scanf("%99s", car->model);
 
@@ -78,10 +70,6 @@ Car* InputCarInfo(Car* car)
 
 void ShowCarInfo(const Car* car)
 {
-    if (car == NULL) {
-        return;
-    }
-
     printf("Model: %s, Year: %d, Mileage: %.2f km\n",
         car->model, car->year, car->mileage);
 }
@@ -89,10 +77,6 @@ void ShowCarInfo(const Car* car)
 void addMileage(Car* car)
 {
     double addedMileage;
-
-    if (car == NULL) {
-        return;
-    }
 
     printf("Mileage to add: ");
     scanf("%lf", &addedMileage);
@@ -104,10 +88,6 @@ void addMileage(Car* car)
 
 int isOlderThanYear(const Car* car, int years)
 {
-    if (car == NULL) {
-        return 0;
-    }
-
     return 2026 - car->year > years;
 }
 
@@ -143,3 +123,4 @@ void ShowCarsInfo(const Car cars[], int size)
         ShowCarInfo(&cars[i]);
     }
 }
+

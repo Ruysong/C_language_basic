@@ -24,6 +24,13 @@
   - 차량의 주행거리를 증가시키고, 제조 연도가 2년을 넘었는지 확인한다.
   - 최대 5대의 차량 정보를 구조체 배열로 관리한다.
 
+## 단계별 차량 정보 예제
+
+- `problem_02_car_management_step_1.c`: 구조체를 값으로 전달하고 반환하는 버전
+- `problem_02_car_management_step_2.c`: 포인터 매개변수로 구조체를 수정하는 버전
+- `problem_02_car_management_step_3.c`: 구조체 주소를 반환하는 버전
+- `problem_02_car_management_step_4.c`: 최대 5대의 차량을 구조체 배열로 관리하는 최종 버전
+
 ## 실행 방법
 
 ```bash
