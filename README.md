@@ -16,6 +16,7 @@
 - [week11_strings](week11_strings/): Week 11 - 문자열 (6 problems)
 - [week12_pointers_basic](week12_pointers_basic/): Week 12 - 포인터 기본 (4 problems)
 - [week13_pointers_advanced](week13_pointers_advanced/): Week 13 - 포인터 활용 (4 problems)
+- [week14_structs](week14_structs/): Week 14 - 구조체 (2 problems)
 
 ## 제외한 항목
 

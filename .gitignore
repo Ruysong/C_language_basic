@@ -14,3 +14,8 @@ Release/
 *.user
 *.suo
 *.pdf
+_tmp_pdf_images/
+_tmp_pdf_images_rot/
+week14_reconstructed/
+week14_rendered_pages/
+edge-tmp/
