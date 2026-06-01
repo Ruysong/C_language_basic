@@ -1,31 +1,38 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <stdlib.h>
 
 /*
 Problem 2 - Step 3
 
 Design:
-- Modify InputCarInfo so it returns the address of the initialized structure.
-- main stores that returned address in a Car pointer.
-- The remaining functions keep using structure pointers.
+- InputCarInfo dynamically allocates one Car structure with malloc.
+- It stores user input in that allocated structure.
+- It returns the address of the newly created structure.
+- main stores that returned address in a Car pointer and frees it at the end.
 */
+
 typedef struct {
     char model[100];
     int year;
     double mileage;
 } Car;
 
-Car* InputCarInfo(Car* car);
+Car* InputCarInfo(void);
 void ShowCarInfo(const Car* car);
 void addMileage(Car* car);
 int isOlderThanYear(const Car* car);
 
 int main(void)
 {
-    Car car;
     Car* carPtr;
 
-    carPtr = InputCarInfo(&car);
+    carPtr = InputCarInfo();
+
+    if (carPtr == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
 
     printf("\n=== Car Info ===\n");
     ShowCarInfo(carPtr);
@@ -42,11 +49,21 @@ int main(void)
         printf("This car is not older than 2 years.\n");
     }
 
+    free(carPtr);
+
     return 0;
 }
 
-Car* InputCarInfo(Car* car)
+Car* InputCarInfo(void)
 {
+    Car* car;
+
+    car = (Car*)malloc(sizeof(Car));
+
+    if (car == NULL) {
+        return NULL;
+    }
+
     printf("Model: ");
     scanf("%99s", car->model);
 
@@ -81,4 +98,3 @@ int isOlderThanYear(const Car* car)
 {
     return 2026 - car->year > 2;
 }
-
